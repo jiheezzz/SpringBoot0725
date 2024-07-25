@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rubypaper.board.BoardDao">
+<select id="select" resultType="com.rubypaper.board.BoardVO">
+select * from board0722 
+where 1 = 1 
+<if test="searchCondition == 'name'" >
+and  name like #{searchKeyword}
+</if>
+<if test="searchCondition == 'etc'" >
+and  etc like #{searchKeyword} 
+</if>
+order by  idx
+</select>
+
+<insert id="insert">
+insert into board0722(idx,name,age,etc) values(board_idx.nextval,#{name},#{age},#{etc})
+</insert>
+
+<select id="tc" resultType="int">
+ <![CDATA[
+  select  count(*) as tc  from  board0722 
+  where 1 = 1
+ ]]>
+ <if test="searchCondition == 'name'" >
+   and  name like #{searchKeyword}
+ </if>
+ <if test="searchCondition == 'etc'" >
+  and  etc like #{searchKeyword}
+ </if>
+</select>
+
+<select id="edit" resultType="com.rubypaper.board.BoardVO">
+select idx,name,age,etc,regdate,regdate as regdate2 from board0722 where idx=#{idx}
+</select>
+
+<delete id="delete">
+delete from board0722 where idx=#{idx}
+</delete>
+
+<update id="update">
+update board0722 set name=#{name},age=#{age},etc=#{etc} where idx=#{idx}
+</update>
+</mapper>

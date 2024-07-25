@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div  th:replace="include/top"></div>
+<script type="text/javascript">
+function delK(){
+	var idx=f1.idx.value;
+	alert("idx: "+idx);
+	location.href="/board/delete?idx="+idx;
+}
+</script>
+<section>
+<br>
+<div align="center">
+<h1>상세보기</h1>
+<form id=f1 action="/board/update" method="post">
+<input type="hidden" name=idx th:value="${m.idx}" >
+<table>
+<tr><td>idx</td><td th:text="${m.idx}" ></tr>
+<tr><td>이름</td><td><input name=name type=text th:value="${m.name}"></tr>
+<tr><td>나이</td><td><input name=age type=text th:value="${m.age}"></tr>
+<tr><td>글</td><td><textarea name=etc rows=10 cols=50>[[${m.etc}]]]</textarea></tr>
+<tr><td>날짜(문자형)</td><td >[[${m.regdate.substring(0,4)}]]년[[${m.regdate.substring(5,7)}]]월[[${m.regdate.substring(8,10)}]]일</tr>
+<tr><td>날짜(날짜형)</td><td >[[${#dates.format(m.regdate2,'yyy')}]]년[[${#dates.format(m.regdate2,'MM')}]]월[[${#dates.format(m.regdate2,'dd')}]]일</tr>
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="수정하기">
+<input type="button" value="삭제하기" onclick="delK()"> 
+</table>
+</form>
+</div>
+<br>
+</section>
+<div  th:replace="include/bottom::footer"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div  th:replace="include/top"></div>
+<section>
+<br>
+<div align="center">
+<h1>목록보기</h1>
+ <form action="/board/list">
+ <select name=searchCondition >
+  <option value="name" > 이름 </option>
+  <option value="etc" > 글 </option>
+ </select>
+ <input  type=text  name=searchKeyword>
+ <input  type=submit  value="검색하기" > 
+ </form>
+ <span th:text="${'레코드수: ' + #lists.size(li)}"> </span>
+<span th:text="${' 나이 합: ' + #aggregates.sum(li.![age]) }"> </span>
+<span th:text="${' 나이평균: ' + #numbers.formatDecimal(#aggregates.sum(li.![age])*1.0 / #lists.size(li), 1, 1)}"> </span>
+<table>
+totalCount: <span th:text="${tc}"></span>
+<tr><th>번호</th><th>이름</th><th>나이</th><th>글</th><th>작성일</th><th>삭제</th></tr>
+<tr th:each="m, state : ${li}">
+    <td>[[${state.count}]]</td>
+    <td><a th:href="@{/board/edit(idx=${m.idx},name=${m.name})}" th:text="${m.name}"></a></td>
+    <td th:text="${m.age}"></td>
+    <td th:text="${m.etc}"></td>
+    <td th:text="${m.regdate}"></td>
+    <td><a th:href="@{/board/delete(idx=${m.idx})}" th:text="삭제"></a></td>
+</tr>
+</table>
+ </div>
+<br>
+</section>
+<div th:replace="include/bottom::footer"></div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div  th:replace="include/top"></div>
+<section>
+<br>
+<div align="center">
+<h2>이니시스 결제 성공화면</h2>
+<h1 th:text="${hello}"></h1>
+<table>
+<tr>
+<th>midx</th><th>mpaynum</th><th>membernum</th><th>mpaymethod</th><th>mpayproduct</th><th>mpayprice</th><th>mpaydate</th>
+<th>mpaygym</th><th>mpayperiod</th><th>trainername</th><th>ggoodsnum</th><th>tgoodsint</th><th>gymnum</th><th>cnt</th>
+</tr>
+<tr th:each="m:${li}">
+<td th:text="${m.midx}"></td>
+<td th:text="${m.mpaynum}"></td>
+<td th:text="${m.membernum}"></td>
+<td th:text="${m.mpaymethod}"></td>
+<td th:text="${m.mpayproduct}"></td>
+<td th:text="${m.mpayprice}"></td>
+<td th:text="${m.mpaydate}"></td>
+<td th:text="${m.mpaygym}"></td>
+<td th:text="${m.mpayperiod}"></td>
+<td th:text="${m.trainername}"></td>
+<td th:text="${m.ggoodsnum}"></td>
+<td th:text="${m.tgoodsint}"></td>
+<td th:text="${m.gymnum}"></td>
+<td th:text="${m.cnt}"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th>mpaynum</th>
+</tr>
+<tr th:each="m:${vo1}">
+<td th:text="${m.mpaynum}"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th>midx</th><th>mpaynum</th><th>membernum</th><th>mpaymethod</th><th>mpayproduct</th><th>mpayprice</th><th>mpaydate</th>
+<th>mpaygym</th><th>mpayperiod</th><th>trainername</th><th>ggoodsnum</th><th>tgoodsint</th><th>gymnum</th><th>cnt</th>
+</tr>
+<tr th:each="m:${edit}">
+<td th:text="${m.midx}"></td>
+<td th:text="${m.mpaynum}"></td>
+<td th:text="${m.membernum}"></td>
+<td th:text="${m.mpaymethod}"></td>
+<td th:text="${m.mpayproduct}"></td>
+<td th:text="${m.mpayprice}"></td>
+<td th:text="${m.mpaydate}"></td>
+<td th:text="${m.mpaygym}"></td>
+<td th:text="${m.mpayperiod}"></td>
+<td th:text="${m.trainername}"></td>
+<td th:text="${m.ggoodsnum}"></td>
+<td th:text="${m.tgoodsint}"></td>
+<td th:text="${m.gymnum}"></td>
+<td th:text="${m.cnt}"></td>
+</tr>
+</table>
+</div>
+<br>
+</section>
+
+<div  th:replace="include/bottom::footer"></div>
+</body>
+</html>

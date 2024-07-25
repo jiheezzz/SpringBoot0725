@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Orbit&display=swap');
+.black-han-sans-regular {
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+ header{
+  	background:#112D4E;  /* 배경색깔 */
+  	height:90px; 		 /* 영역의 높이 */
+  	line-height:90px;	 /* 라인 높이 */
+  	color: white;
+  	font-size:48px;		 /* 글자크기 */
+  	text-align:center;   /* 글자 가운데 정렬 */
+	font-family: "Orbit", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+  	
+  }
+  nav{
+	background:#DBE2EF;  /* 배경색깔 */
+  	height:40px; 		 /* 영역의 높이 */
+  	line-height:40px;	 /* 라인 높이 */
+  	color:#ffffff; 		 /* 글자색깔 (빨, 녹, 파) */
+  	font-size:22px;		 /* 글자크기 */
+  	text-align:center;   /* 글자 가운데 정렬 */
+  	font-family: "Orbit", sans-serif;
+ 	font-weight: 400;
+  	font-style: normal;
+  }
+	
+  section{
+	background:#F9F7F7;  /* 배경색깔 */
+  	min-height:450px; 		 /* 영역의 높이 */
+  	line-height:40px;	 /* 라인 높이 */
+  	font-size:14px;		 /* 글자크기 */
+  	font-family: "Orbit", sans-serif;
+ 	font-weight: 400;
+  	font-style: normal;
+  }
+	
+  footer{
+	background:#112D4E;  /* 배경색깔 */
+  	height:40px; 		 /* 영역의 높이 */
+  	line-height:40px;	 /* 라인 높이 */
+  	color:white; 		 /* 글자색깔 (빨, 녹, 파) */
+  	font-size:16px;		 /* 글자크기 */
+  	text-align:center;   /* 글자 가운데 정렬 */
+  	font-family: "Orbit", sans-serif;
+  	font-weight: 400;
+ 	font-style: normal;
+  }
+  
+  th{
+  background: #DBE2EF;
+  text-align: center;
+  }
+  
+  td{
+  background: #DBE2EF;
+  text-align: center;
+  }
+
+	
+  a{
+  text-decoration: none;
+  color: #121481;
+  }
